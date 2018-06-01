@@ -5,7 +5,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Avro\CaseBundle\Util;
+namespace TripleHelix\CaseBundle\Util;
 
 /**
  * Convert strings into different case formats

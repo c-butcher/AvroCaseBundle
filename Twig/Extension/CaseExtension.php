@@ -5,9 +5,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Avro\CaseBundle\Twig\Extension;
+namespace TripleHelix\CaseBundle\Twig\Extension;
 
-use Avro\CaseBundle\Util\CaseConverter;
+use TripleHelix\CaseBundle\Util\CaseConverter;
 use Twig_SimpleFilter;
 
 /**

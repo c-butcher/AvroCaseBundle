@@ -5,7 +5,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Avro\CaseBundle\DependencyInjection;
+namespace TripleHelix\CaseBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\Alias;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Avro\CaseBundle;
+namespace TripleHelix\CaseBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

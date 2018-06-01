@@ -7,7 +7,7 @@
 
 namespace Avro\CaseBundle\Tests\Twig\Extension;
 
-use Avro\CaseBundle\Twig\Extension\CaseExtension;
+use TripleHelix\CaseBundle\Twig\Extension\CaseExtension;
 
 /**
  * Test CaseExtension Class
@@ -27,12 +27,12 @@ class CaseExtensionTest extends \PHPUnit_Framework_TestCase
 
     public function setup()
     {
-        $this->converter = $this->getMock('Avro\CaseBundle\Util\CaseConverter');
+        $this->converter = $this->getMock('TripleHelix\CaseBundle\Util\CaseConverter');
         $this->extension = new CaseExtension($this->converter);
     }
 
     /**
-     * @covers Avro\CaseBundle\Twig\Extension\CaseExtension::getName
+     * @covers TripleHelix\CaseBundle\Twig\Extension\CaseExtension::getName
      */
     public function testGetName()
     {
@@ -40,7 +40,7 @@ class CaseExtensionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Avro\CaseBundle\Twig\Extension\CaseExtension::getFilters
+     * @covers TripleHelix\CaseBundle\Twig\Extension\CaseExtension::getFilters
      */
     public function testGetFilters()
     {
