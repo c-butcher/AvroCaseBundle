@@ -8,6 +8,7 @@
 namespace Avro\CaseBundle\Twig\Extension;
 
 use Avro\CaseBundle\Util\CaseConverter;
+use Twig_SimpleFilter;
 
 /**
  * Twig extension for case conversion
@@ -34,10 +35,10 @@ class CaseExtension extends \Twig_Extension
     public function getFilters()
     {
         return array(
-            new \Twig_SimpleFilter('camel', array($this, 'toCamelCase')),
-            new \Twig_SimpleFilter('pascal', array($this, 'toPascalCase')),
-            new \Twig_SimpleFilter('underscore', array($this, 'toUnderscoreCase')),
-            new \Twig_SimpleFilter('title', array($this, 'toTitleCase'))
+            new Twig_SimpleFilter('camel', array($this, 'toCamelCase')),
+            new Twig_SimpleFilter('pascal', array($this, 'toPascalCase')),
+            new Twig_SimpleFilter('underscore', array($this, 'toUnderscoreCase')),
+            new Twig_SimpleFilter('title', array($this, 'toTitleCase'))
         );
     }
 
