@@ -21,7 +21,7 @@
         "twig/twig": "^2.0"
     },
     "autoload": {
-        "psr-0": { "3xcorp\\CaseBundle": "" }
+        "psr-0": { "TripleHelix\\CaseBundle": "" }
     },
-    "target-dir": "3xcorp/CaseBundle"
+    "target-dir": "TripleHelix/CaseBundle"
 }
