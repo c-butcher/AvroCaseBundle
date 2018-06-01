@@ -11,7 +11,7 @@ This bundle is listed on packagist.
 Simply add it to your apps composer.json file
 
 ``` js
-    "avro/case-bundle": "0.1.2"
+    "3xcorp/case-bundle": "0.1.3"
 ```
 
 Enable the bundle in the kernel:
@@ -19,7 +19,7 @@ Enable the bundle in the kernel:
 ``` php
 // app/AppKernel.php
 
-    new Avro\CaseBundle\AvroCaseBundle
+    new TripleHelix\CaseBundle\AvroCaseBundle
 ```
 
 Configuration
