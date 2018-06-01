@@ -48,7 +48,9 @@ class CaseConverter
         $input = trim(lcfirst($input));
 
         // camel case
-        $input = preg_replace_callback('/([A-Z])/', create_function('$c', 'return "_" . strtolower($c[1]);'), $input);
+        $input = preg_replace_callback('/([A-Z])/', function ($c) {
+            return "_" . strtolower($c[1]);
+        }, $input);
 
         // title case
         $input = str_replace(' ', '', $input);
@@ -89,13 +91,13 @@ class CaseConverter
         $input = ucfirst($input);
 
         // camelCase
-        $input = preg_replace_callback('/([A-Z])/', create_function('$c', 'return " " . ucfirst($c[1]);'), $input);
+        $input = preg_replace_callback('/([A-Z])/', function($c) { return " " . ucfirst($c[1]); }, $input);
 
         // lowercase title
-        $input = preg_replace_callback('/ ([a-z])/', create_function('$c', 'return " " . ucfirst($c[1]);'), $input);
+        $input = preg_replace_callback('/ ([a-z])/', function($c) { return " " . ucfirst($c[1]); }, $input);
 
         // underscore
-        $input = preg_replace_callback('/_([a-z])/', create_function('$c', 'return " " . strtoupper($c[1]);'), $input);
+        $input = preg_replace_callback('/_([a-z])/', function($c) { return " " . strtoupper($c[1]); }, $input);
 
         return trim(preg_replace('/\s+/', ' ', $input));
     }
@@ -133,10 +135,10 @@ class CaseConverter
         $input = lcfirst($input);
 
         // underscore
-        $input = preg_replace_callback('/_([a-z])/', create_function('$c', 'return strtoupper($c[1]);'), $input);
+        $input = preg_replace_callback('/_([a-z])/', function($c) { return strtoupper($c[1]); }, $input);
 
         // title
-        $input = preg_replace_callback('/ ([a-z])/', create_function('$c', 'return strtoupper($c[1]);'), $input);
+        $input = preg_replace_callback('/ ([a-z])/', function($c) { return strtoupper($c[1]); }, $input);
 
         $input = str_replace(' ', '', $input);
 
@@ -176,10 +178,10 @@ class CaseConverter
         $input = ucfirst($input);
 
         // underscore
-        $input = preg_replace_callback('/_([a-z])/', create_function('$c', 'return strtoupper($c[1]);'), $input);
+        $input = preg_replace_callback('/_([a-z])/', function ($c) { return strtoupper($c[1]); }, $input);
 
         // title
-        $input = preg_replace_callback('/ ([a-z])/', create_function('$c', 'return strtoupper($c[1]);'), $input);
+        $input = preg_replace_callback('/ ([a-z])/', function ($c) { return strtoupper($c[1]); }, $input);
 
         $input = str_replace(' ', '', $input);
 
@@ -198,18 +200,20 @@ class CaseConverter
     {
         switch($format) {
             case 'camel':
-                return $this->toCamelCase($input);
+                $input = $this->toCamelCase($input);
                 break;
             case 'pascal':
-                return $this->toPascalCase($input);
+                $input = $this->toPascalCase($input);
                 break;
             case 'title':
-                return $this->toTitleCase($input);
+                $input = $this->toTitleCase($input);
                 break;
             case 'underscore':
-                return $this->toUnderscoreCase($input);
+                $input = $this->toUnderscoreCase($input);
                 break;
         }
+
+        return $input;
     }
 
     /**
@@ -231,5 +235,4 @@ class CaseConverter
             return 'camel';
         }
     }
-
 }
