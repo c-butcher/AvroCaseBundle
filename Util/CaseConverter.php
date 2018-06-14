@@ -11,9 +11,8 @@ namespace TripleHelix\CaseBundle\Util;
  * Convert strings into different case formats
  *
  * @author Joris.w.dewit <joris.w.dewit@gmail.com>
- *
  */
-class CaseConverter
+class CaseConverter extends \Avro\CaseBundle\Util\CaseConverter
 {
     /**
      * Converts a string into underscore format (e.g. first_name)
